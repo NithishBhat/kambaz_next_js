@@ -1,54 +1,39 @@
-# Kambaz (Next.js)
+# Kambaz (Next.js frontend)
 
-A Canvas-style learning management interface built with Next.js, React, and React Bootstrap for Northeastern's Web Development course. It has the app shell and page layouts: account pages, a course dashboard, and course pages for modules, assignments, and people.
+Kambaz is a course-management website modeled on Canvas, the system Northeastern students use to find course materials, assignments and grades. I built this frontend for my Web Development course at Northeastern. It covers the main screens a student sees: signing in, a dashboard of enrolled courses, and per-course pages for modules, assignments and the class roster.
 
-## Tech stack
+It's a work in progress. Every page currently renders hard-coded sample content, and the frontend isn't connected yet to the backend API I wrote for it ([kambaz-node-server-app](https://github.com/NithishBhat/kambaz-node-server-app)). Grades, Quizzes, Piazza and Zoom are placeholder pages.
 
-- Next.js 15 (App Router, Turbopack)
-- React 19 + TypeScript
-- React Bootstrap / Bootstrap 5
-- React Icons
-- Tailwind CSS 4 (PostCSS setup)
+## What's here
 
-## Features
+- A left sidebar for Account, Dashboard, Courses, Calendar, Inbox and Labs
+- Sign in, sign up and profile pages
+- A dashboard with a grid of course cards
+- Course pages under `/Courses/[cid]`: Home, Modules, an assignments list with an editor page (`/Assignments/[aid]`), and a People table
+- `Labs/`: the weekly course exercises (Bootstrap layout, flexbox, positioning, forms, tables, React Icons)
 
-- **Global sidebar navigation:** Account, Dashboard, Courses, Calendar, Inbox, and Labs
-- **Account:** Sign in, Sign up, and Profile pages, with their own account navigation
-- **Dashboard:** a responsive grid of course cards
-- **Course pages** (dynamic `/Courses/[cid]` routes) with course navigation:
-  - Home (modules and a course status panel)
-  - Modules (with lesson controls)
-  - Assignments list and an assignment editor (`/Assignments/[aid]`)
-  - People table
-  - Placeholder pages for Grades, Quizzes, Piazza, and Zoom
-- **Labs:** exercises on Bootstrap grids, flexbox, positioning, forms, tables, lists, navigation, and React Icons
+Built with Next.js 15 (App Router), React 19, TypeScript and React Bootstrap. Tailwind 4 is installed through PostCSS.
 
-The UI currently uses static, hard-coded content. The matching REST backend lives in a separate repo (see below).
-
-## Getting started
+## Running it
 
 ```bash
 npm install
-npm run dev      # start the dev server at http://localhost:3000
-npm run build    # production build
-npm start        # serve the production build
+npm run dev      # http://localhost:3000
+npm run build
+npm start
 npm run lint
 ```
 
-## Project structure
+## Layout
 
 ```
 app/
   (kambaz)/
-    Navigation.tsx          # Main sidebar
-    Account/                # Signin, Signup, Profile
-    Dashboard/              # Course cards
-    Courses/[cid]/          # Home, Modules, Assignments, People, Grades, ...
+    Navigation.tsx      sidebar
+    Account/            Signin, Signup, Profile
+    Dashboard/          course cards
+    Courses/[cid]/      Home, Modules, Assignments, People, Grades, ...
     Calendar/, Inbox/
-  Labs/                     # Lab1-Lab3 exercises
-public/images/              # Course and logo images
+  Labs/                 Lab1-Lab3
+public/images/          course and logo images
 ```
-
-## Related
-
-- Backend: [kambaz-node-server-app](https://github.com/NithishBhat/kambaz-node-server-app) (Node.js + Express REST API)
