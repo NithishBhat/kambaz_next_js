@@ -1,5 +1,7 @@
 # Kambaz (Next.js frontend)
 
+**Live demo:** https://kambaz-next-js-zeta-seven.vercel.app
+
 Kambaz is a course-management website modeled on Canvas, the system Northeastern students use to find course materials, assignments and grades. I built this frontend for my Web Development course at Northeastern. It covers the main screens a student sees: signing in, a dashboard of enrolled courses, and per-course pages for modules, assignments and the class roster.
 
 It's a work in progress. Every page currently renders hard-coded sample content, and the frontend isn't connected yet to the backend API I wrote for it ([kambaz-node-server-app](https://github.com/NithishBhat/kambaz-node-server-app)). Grades, Quizzes, Piazza and Zoom are placeholder pages.
