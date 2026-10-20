@@ -1,41 +1,30 @@
-# Kambaz (Next.js frontend)
+# Kambaz
 
-**Live demo:** https://kambaz-next-js-zeta-seven.vercel.app
+Live site: https://kambaz-next-js-zeta-seven.vercel.app
 
-Kambaz is a course-management website modeled on Canvas, the system Northeastern students use to find course materials, assignments and grades. I built this frontend for my Web Development course at Northeastern. It covers the main screens a student sees: signing in, a dashboard of enrolled courses, and per-course pages for modules, assignments and the class roster.
+Kambaz is a Canvas-style learning management system I built for the Web Development course at Northeastern. This repo is the Next.js frontend. The backend is [kambaz-node-server-app](https://github.com/NithishBhat/kambaz-node-server-app) (Express + MongoDB, hosted on Render).
 
-It's a work in progress. Every page currently renders hard-coded sample content, and the frontend isn't connected yet to the backend API I wrote for it ([kambaz-node-server-app](https://github.com/NithishBhat/kambaz-node-server-app)). Grades, Quizzes, Piazza and Zoom are placeholder pages.
+## Features
 
-## What's here
+- Sign up, sign in and profile editing with cookie-based sessions
+- Role-based views for students, faculty and admins
+- Dashboard of enrolled courses; faculty can create, edit and delete courses, students can enroll and unenroll
+- Course modules and assignments with full create/edit/delete for faculty
+- People page with user details and role editing
+- Quizzes:
+  - Faculty editor for quiz settings (time limit, multiple attempts, shuffle answers, access code, one question at a time, due/available dates, publish)
+  - Question editor for multiple choice, true/false and fill-in-the-blank questions
+  - Preview mode and student attempts with scoring and attempt history
 
-- A left sidebar for Account, Dashboard, Courses, Calendar, Inbox and Labs
-- Sign in, sign up and profile pages
-- A dashboard with a grid of course cards
-- Course pages under `/Courses/[cid]`: Home, Modules, an assignments list with an editor page (`/Assignments/[aid]`), and a People table
-- `Labs/`: the weekly course exercises (Bootstrap layout, flexbox, positioning, forms, tables, React Icons)
+## Stack
 
-Built with Next.js 15 (App Router), React 19, TypeScript and React Bootstrap. Tailwind 4 is installed through PostCSS.
+Next.js (App Router), React 19, TypeScript, Redux Toolkit, Axios, React Bootstrap
 
-## Running it
+## Running locally
 
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build
-npm start
-npm run lint
 ```
 
-## Layout
-
-```
-app/
-  (kambaz)/
-    Navigation.tsx      sidebar
-    Account/            Signin, Signup, Profile
-    Dashboard/          course cards
-    Courses/[cid]/      Home, Modules, Assignments, People, Grades, ...
-    Calendar/, Inbox/
-  Labs/                 Lab1-Lab3
-public/images/          course and logo images
-```
+By default the app talks to `http://localhost:4000`. To point it somewhere else, set `NEXT_PUBLIC_HTTP_SERVER` in `.env.local`. Production builds use the Render URL in `.env.production`.

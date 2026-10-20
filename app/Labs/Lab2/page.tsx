@@ -33,10 +33,10 @@ export default function LabsLayout() {
         <h3>ID selectors</h3>
         <p id="wd-id-selector-1">
 Instead of changing the look and feel of all the 
-elements of the same name, e.g., P, we can refer to a specific element by its ID
+elements of the same name, e.g Pwe can refer to a specific element by its ID
         </p>
         <p id="wd-id-selector-2">
-Here&apos;s another paragraph using a different ID and a different look and
+Heres another paragraph using a different ID and a different look and
           feel
         </p>
       </div>
@@ -44,7 +44,7 @@ Here&apos;s another paragraph using a different ID and a different look and
   <h3>Class selectors</h3>
 
   <p className="wd-class-selector">
-Instead of using IDs to refer to elements, you can use an element&apos;s CLASS attribute
+Instead of using IDs to refer to elements you can use an elemen CLASS attribute
   </p>
 
   <h4 className="wd-class-selector">
@@ -59,7 +59,7 @@ This heading has same style as paragraph above
       Selectors can be combined to refer elements in particular
       places in the document
       <p className="wd-selector-3">
-        This paragraph&apos;s red background is referenced as
+        This paragraph's red background is referenced as
         <br />
         .selector-2 .selector3<br />
         meaning the descendant of some ancestor.<br />
